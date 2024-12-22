@@ -1,0 +1,103 @@
+﻿@model DoAnQLBS.Models.SACH
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Layout/Admin.cshtml";
+}
+
+<h2>Delete</h2>
+<div>
+    <h4>SACH</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MASACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MASACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TENSACH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENSACH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GIABAN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GIABAN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ANHBIA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ANHBIA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NGAYCAPNHAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NGAYCAPNHAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SOLUONGTON)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SOLUONGTON)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NXB.TENNXB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NXB.TENNXB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CHUDE.TENCHUDE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CHUDE.TENCHUDE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Moi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Moi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,36 @@
+﻿#anh
+{
+    float:left;
+    height:100px;
+    width:200px
+}
+#thongtin
+{
+    float:left;
+    width:600px;
+}
+#tensach
+{
+    font-weight:normal;
+    font-size:20pt;
+    height:auto;
+    /*Cach noi dung tu xuong dong*/
+    word-wrap:break-word;
+    color:orangered;
+}
+#chude, #nxb,#mota {
+    font-size: 15pt;
+    font-weight: normal;
+    height: auto;
+    color:black;
+}
+#btngiohang{
+    font-family:'Segoe UI';
+    background-color:red;
+}
+#btngiohang:hover
+{
+    background-color:brown
+}
+body {
+}

@@ -1,0 +1,20 @@
+﻿@using DoAnQLBS.Models;
+@model List<NXB>
+@{
+    ViewBag.Title = "DanhMucNXB";
+    Layout = "~/Views/Layout/Nguoidung.cshtml";
+}
+<style>
+    #nxbtrai
+    {
+        display:none;
+    }
+    #danhmucchude
+    {
+        display:none;
+    }
+</style>
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("sachtheonxb", new {@manxb = item.MANXB})" class="button button-delete">@item.TENNXB</a>
+}

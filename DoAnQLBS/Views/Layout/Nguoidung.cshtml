@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @*Chen link css cua template ban sach*@
+    <link href="~/Content/NguoiDungCSSLayOut/fonts.css" rel="stylesheet" />
+    <link href="~/Content/NguoiDungCSSLayOut/screen.css" rel="stylesheet" />
+    @*Chen link css thiet ke nguoi dung*@
+    <link href="~/Content/NguoiDungCSSLayOut/NguoiDung.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+</head>
+<body>
+    <div id="ToanTrang">
+        <section class="blank">
+            <div class="flash">
+                <div class="sodienthoai">
+                    <i class="fa fa-phone">
+                        0865632776
+                    </i>
+                </div>
+                <div class="DangKyDangNhap">
+                    @*Dang ky va dang nhap*@
+                    @if (Session["TaiKhoan"] == null || Session["TaiKhoan"].ToString() == "")
+                    {
+
+                        @Html.Action("GioHangPartial", "GioHang")
+                        <i class="fa fa-user-plus"></i>
+                        <a href="/Khachhang/DangKy">Đăng ký</a>
+                        <i class="fa fa-sign-in"></i>
+                        <a href="/Khachhang/DangNhap">Đăng nhập</a>
+                    }
+                    else
+                    {
+                        @Html.Action("GioHangPartial", "GioHang")
+                        <i class="fa fa-user-plus"></i>
+                        <a href="/Khachhang/DangKy">Đăng ký</a>
+                        <i class="fa fa-sign-in"></i>
+                        <a href="/Khachhang/DangNhap">Đổi tài khoản</a>
+                    }
+                </div>
+
+                </div>
+
+            <div class="flash" id="danhmuc">
+                <div id="timkiem">
+                    @using (Html.BeginForm("KetQua","TimKiem",FormMethod.Post))
+                    {
+                        @Html.TextBox("timkiem", "", new { @class = "txtTimKiem", @placeholder = "Nhập vào sách cần tìm" })
+                        <div class="nuttimkiem">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    }
+                </div>
+                <ul class="navMenu">
+                    <li>
+                        <a href="~/Home/Index">Trang chủ</a>
+                    </li>
+                    <li>
+                        <a href="~/GioiThieu/Index">Giới thiệu</a>
+                    </li>
+                    <li>
+                        <a href="~/Lienhe/Index">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="phantren">
+            <div id="menuTrai">
+                @* Dung partial view de chen sach vao *@
+                <div class="activity">
+                    @Html.Action("SachPartial","Sach")
+                </div>
+            </div>
+            <div id="chinhanh">
+                <img src="~/Hinh anh/9210ad11-08b5-4fae-a5fe-7556343ca9e9.jpg" height="320" />
+            </div>
+        </section>
+        <section>
+            @* xuong dong div o duoi *@
+            <div style="clear:both"></div>
+        </section>
+        <div id="noidung">
+            @RenderBody()
+        </div>
+        <section>
+            <div id="danhmucchude">
+                @Html.Action("ChuDePartial","ChuDe")
+            </div>
+
+        </section>
+
+        <section class="blank items">
+            <div id="nxbtrai">
+                <div class="item">
+                    <div class="item-info">
+                        @Html.Action("NXBPartial", "NXB")
+                    </div>
+                </div>
+                
+            </div>
+                <div id="nxbphai">
+                    @RenderSection("NoiDungBenPhai",false)
+                </div>
+                <div style="clear:both"></div>
+                <div id="phanduoi">
+                    <a href="#" class="button button-buy">Chào mừng các bạn đã đến với trang web bán sách của mình</a>
+                </div>     
+        </section>
+    </div>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

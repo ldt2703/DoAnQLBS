@@ -1,0 +1,14 @@
+﻿@using DoAnQLBS.Models;
+@model List<NXB>
+<h1>Nhà xuất bản</h1>
+@foreach (var item in Model)
+{
+    <div>
+        <i class="fa fa-book"></i>
+        <a href="@Url.Action("sachtheonxb", new {@manxb =item.MANXB})">@item.TENNXB</a>
+    </div>
+}
+<div>
+    <a href="@Url.Action("DanhMucNXB")" style="color:black">Xem thêm</a>
+</div>
+

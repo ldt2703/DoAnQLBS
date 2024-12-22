@@ -1,0 +1,17 @@
+﻿@using DoAnQLBS.Models;
+@model List<SACH>
+<h1 class="item-header">Sách thịnh hành</h1>
+@{
+    foreach (var item in Model)
+    {
+        <div class="activity-list-update">
+            <img src="@Url.Content("~/Hinh anh/"+item.ANHBIA)" width="50" height="50" alt="Image">
+            <p><strong>Tiêu đề:@item.TENSACH</strong> <br /><a href="@Url.Action("xemchitiet", new {@masach = item.MASACH})">Xem chi tiết</a></p>
+            <div class="clear"></div>
+        </div>
+    }
+}
+<a href="#" class="item-footer green">
+    Top sách thịnh hành
+</a>
+

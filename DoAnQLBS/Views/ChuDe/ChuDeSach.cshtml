@@ -1,0 +1,48 @@
+﻿@using DoAnQLBS.Models;
+@model List<SACH>
+@{
+    ViewBag.Title = "ChuDeSach";
+    Layout = "~/Views/Layout/Nguoidung.cshtml";
+}
+@section NoiDungBenPhai
+{
+    <p>Đọc sách để biết mình không cô đơn.” - William Nicholson</p>
+
+    Sách là bạn và là người thầy, mang cả thế giới tri thức và trải nghiệm của con người trên khắp thế giới chia sẻ với bạn.
+    Nhà sách chúng tôi mang đến cho bạn những giá trị tuyệt vời từ sách. Cập nhật nhanh nhất sách hay nên đọc các thể loại Văn Học, Kinh tế, Kiến trúc, Chính trị, Triết học, Thiếu nhi, Truyện tranh, Sách học Tiếng Anh….do đó bạn có thể tiếp cận kho truyện hay cùng vô số giáo trình chuyên ngành đặc sắc để mua sách online một cách dễ dàng! Ngoài ra, chúng tôi còn có rất nhiều tựa sách hay và khó tìm trên thị trường sẽ thỏa mãn mọi người.
+}
+@if (Model.Count == 0)
+{
+    @ViewBag.sach
+}
+<div>
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        i++;
+        <div id="sanpham" style="float:left;width:23%;margin-left:3%">
+            <a href="@Url.Action("xemchitiet", "Sach", new { @MaSach = item.MASACH })">
+                <div id="anhbia">
+                    <img src="@Url.Content("/Hinh anh/" + item.ANHBIA)" width="120" height="150" />
+                </div>
+            </a>
+            <div id="tensach">
+                @item.TENSACH
+            </div>
+            <div id="dongia" style="color:chocolate">
+                <font color="Blue">Giá:</font>@string.Format("{0:0,0}", @item.GIABAN) VNĐ
+            <div id="giohang">
+                @using (Html.BeginForm("ThemGioHang", "GioHang", new { @MaSp = item.MASACH, @duongdan = Request.Url.ToString() }))
+                {
+                    <input type="submit" style="width:100px;height:50px" value="Mua hàng" id="btngiohang" class="btn btn-primary" />
+                }
+            </div>
+            </div>
+        </div>
+        if (i % 3 == 0)
+        {
+            <div style="clear:both"></div>
+        }
+    }
+    <div style="clear:both"></div>
+</div>

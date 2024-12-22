@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Layout/Nguoidung.cshtml";
+}
+<style>
+
+    #phantren {
+        display: none;
+    }
+</style>
+<div style="margin-left:300px">
+    <h2>Đăng nhập</h2>
+    @using (Html.BeginForm())
+    {
+        <span>Tên đăng nhập:</span>
+        <br />
+        @Html.TextBox("txtTaiKhoan")
+        <br />
+        <span>Mật khẩu:</span>
+        <br />
+        @*@Html.TextBox("txtMatKhau")*@
+        @Html.Password("txtMatKhau")
+        <br />
+        <input type="submit" id="btnSubmit" name="btnSubmit" value="Đăng nhập" />
+    }
+    <h3 style="color:red">@ViewBag.ThongBao</h3>
+</div>

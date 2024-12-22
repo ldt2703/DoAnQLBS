@@ -1,0 +1,30 @@
+﻿@using DoAnQLBS.Models;
+@model SACH
+<link href="~/Content/NguoiDungCSSLayOut/Chitiet.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "xemchitiet";
+    Layout = "~/Views/Layout/Nguoidung.cshtml";
+}
+<style>
+
+    #phantren {
+        display: none;
+    }
+</style>
+@section NoiDungBenPhai
+{
+    <div id="anh"><img src="@Url.Content("~/Hinh anh/"+Model.ANHBIA)" /></div>
+    <div id="thongtin">
+        <div id="tensach">Tên sách: @Model.TENSACH</div>
+        <div id="chude">Chủ đề: @Model.CHUDE.TENCHUDE</div>
+        <div id="nxb">NXB: @Model.NXB.TENNXB</div>
+        <div id="mota">Mô tả: @Model.MOTA</div>
+        <div id="gia"><span style="color:blue;font-weight:normal">Giá tiền: </span>@string.Format("{0:0,0}", @Model.GIABAN) VNĐ</div>
+        <br />
+        @using (Html.BeginForm("ThemGioHang", "GioHang", new { @MaSp = Model.MASACH, @duongdan = Request.Url.ToString() }))
+        {
+            <input type="submit" style="width:100px;height:50px" value="Mua hàng" id="btngiohang" class="btn btn-primary" />
+        }
+
+    </div>
+}

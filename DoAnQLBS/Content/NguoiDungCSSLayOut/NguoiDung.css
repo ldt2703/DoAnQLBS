@@ -1,0 +1,81 @@
+﻿#ToanTrang
+{
+    font-weight:bold;
+    position:relative;
+}
+.DangKyDangNhap {
+    /*di chuyen sang ben phai*/
+    float:right; 
+    /*Di chuyen len tren*/
+    margin-top:-1%;
+}
+.DangKyDangNhap a:hover
+{
+    /*bo gach chan*/
+    text-decoration:none;
+    color:forestgreen;
+}
+.sodienthoai
+{
+    float:left;
+    margin-top:-1%;
+}
+#danhmuc
+{
+    height:30px;
+}
+.navMenu {
+    float: right;
+    margin-right:10%;
+}
+.navMenu li {
+    /*hien tren mot dong*/
+    display: inline;
+    /*duong ke, .1 la do trong suot 0.1*/
+    border-right: solid 1px rgb(0, 0, 0,.1);
+    /*noi rong ra*/
+    padding: 20px;
+    /*noi rong phia tren*/
+    padding-top: 19px;
+    /*noi rong phia duoi*/
+    padding-bottom: 22px;
+}
+.navMenu li:hover
+{
+    background-color:chocolate;
+}
+.navMenu a:hover {
+    text-decoration: none;
+}
+#timkiem {
+    margin-left: 5%;
+}
+.txtTimKiem{
+    float:left;
+    height:0;
+}
+.nuttimkiem button {
+    float: left;
+    font-size: 11px;
+    padding:0 10px 0 10px;
+    height: 33px;
+    width:30px;
+}
+#menuTrai {
+    float:left;
+
+}
+#nxbtrai{
+    float:left;
+    width:30%;
+}
+#nxbtrai .item{
+    width:100%;
+    height:30%;
+}
+#nxbphai{
+    float:right;
+    width:70%;
+}
+body {
+}

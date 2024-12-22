@@ -1,0 +1,39 @@
+﻿@using DoAnQLBS.Models
+@model List<GioHang>
+<link href="~/Content/NguoiDungCSSLayOut/GioHang.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Layout/Nguoidung.cshtml";
+}
+
+<table id="giohang">
+    <tr>
+        <td>Mã sách</td>
+        <td>Tên sách</td>
+        <td>Ảnh bìa</td>
+        <td>Đơn giá</td>
+        <td>Số lượng</td>
+        <td>Thành tiền</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaSP</td>
+            <td>@item.TenSP</td>
+            <td><img src="@Url.Content("~/Hinh anh/"+item.HinhAnh)" width="50" height="65"></td>
+            <td>@String.Format("{0:0,0}", item.DonGia) VNĐ </td>
+            <td>@item.SoLuong</td>
+            <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+        </tr>
+    }
+    <tr>
+        <td colspan="6" style="text-align:right;color:darkblue">
+            @Html.ActionLink("Sửa giỏ hàng", "SuaGioHang")
+            @using (Html.BeginForm("DatHang", "GioHang"))
+            {
+                <input type="submit" value="Mua hàng" />
+            }
+        </td>
+    </tr>
+</table>

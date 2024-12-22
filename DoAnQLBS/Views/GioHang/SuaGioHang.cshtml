@@ -1,0 +1,41 @@
+﻿
+@using DoAnQLBS.Models
+@model List<GioHang>
+<link href="~/Content/NguoiDungCSSLayOut/GioHang.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "SuaGioHang";
+    Layout = "~/Views/Layout/Nguoidung.cshtml";
+}
+
+<table id="giohang">
+    <tr>
+        <td>Mã sách</td>
+        <td>Tên sách</td>
+        <td>Ảnh bìa</td>
+        <td>Đơn giá</td>
+        <td>Số lượng</td>
+        <td>Thành tiền</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaSP</td>
+            <td>@item.TenSP</td>
+            <td><img src="@Url.Content("~/Hinh anh/" + item.HinhAnh)" width="50" height="65"></td>
+            <td>@String.Format("{0:0,0}", item.DonGia) VNĐ </td>
+            @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { @MaSP = item.MaSP }))
+            {
+                <td>@Html.TextBox("txtSoLuong", item.SoLuong)</td>
+                <td>@String.Format("{0:0,0}", item.ThanhTien) VNĐ</td>
+                <td>
+                    <input type="submit" value="Cập nhật" />
+                    <br />
+                    @Html.ActionLink("Xóa", "XoaGioHang", new { @MaSP = item.MaSP })
+                </td>
+            }
+        </tr>
+    }
+</table>
+
+

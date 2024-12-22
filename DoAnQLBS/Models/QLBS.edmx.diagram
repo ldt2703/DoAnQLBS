@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2804c6246e9f4fc1a32f3f99c4ef0735" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBSModel.CHITIETDONHANG" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.CHUDE" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.DONHANG" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.NXB" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.SACH" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.TACGIA" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBSModel.THAMGIA" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="QLBSModel.FK__CHITIETDO__MADON__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBSModel.FK__CHITIETDO__MASAC__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBSModel.FK__SACH__MACHUDE__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBSModel.FK__DONHANG__MAKH__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBSModel.FK__SACH__MANXB__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBSModel.FK__THAMGIA__MASACH__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBSModel.FK__THAMGIA__MATG__1BFD2C07" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
